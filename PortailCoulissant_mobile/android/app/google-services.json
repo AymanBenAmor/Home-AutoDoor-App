@@ -1,7 +1,7 @@
 {
   "project_info": {
     "project_number": "422045181113",
-    "firebase_url": "https://portail-coulissant-default-rtdb.firebaseio.com",
+    "firebase_url": "your firebase_url here",
     "project_id": "portail-coulissant",
     "storage_bucket": "portail-coulissant.appspot.com"
   },
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDJx9mcjWXKog6jcVeLq5ThjgxQaHiT-UI"
+          "current_key": "your firebase authentication key"
         }
       ],
       "services": {
