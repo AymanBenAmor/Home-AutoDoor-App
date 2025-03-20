@@ -12,6 +12,10 @@
 #include <WiFi.h>
 
 
+#define relais_all 23
+#define relais_walker 19
+
+
 
 int led =2;
 char msg;
@@ -28,6 +32,7 @@ struct_message myData;
 void action();
 void open_all_action();
 void open_walker_action();
+void clear();
 
 
 // Callback function executed when data is received
@@ -63,6 +68,11 @@ void setup() {
 
   pinMode(led,OUTPUT);
 
+  pinMode(relais_all,OUTPUT);
+  pinMode(relais_walker,OUTPUT);
+
+  clear();
+
   // Register callback function
   esp_now_register_recv_cb(OnDataRecv);
 }
@@ -78,21 +88,28 @@ void action(){
   else if(msg == 'w'){
     open_walker_action();
   }
+  clear();
 }
 
 void open_all_action(){
-  digitalWrite(led, 1);
-  delay(100);
-  digitalWrite(led, 0);
+  digitalWrite(relais_all,HIGH);
+  digitalWrite(led,HIGH);
+  delay(1000);
+  digitalWrite(relais_all,LOW);
+  digitalWrite(led,LOW);
 }
 
 void open_walker_action(){
-  digitalWrite(led, 1);
-  delay(100);
-  digitalWrite(led, 0);
-  delay(100);
-  digitalWrite(led, 1);
-  delay(100);
-  digitalWrite(led, 0);
+   digitalWrite(relais_walker,LOW);
+  digitalWrite(led,HIGH);
+  delay(1000);
+  digitalWrite(relais_walker,HIGH);
+  digitalWrite(led,LOW);
+}
+
+void clear(){
+  digitalWrite(relais_all,LOW);
+  digitalWrite(relais_walker,LOW);
+
 }
 

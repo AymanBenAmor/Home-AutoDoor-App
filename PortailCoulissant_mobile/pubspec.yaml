@@ -41,6 +41,8 @@ dependencies:
   speech_to_text: ^7.0.0
 
 
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -68,6 +70,8 @@ flutter:
   assets:
     - assets/images/bg2.jpg
     - assets/images/portail.jpg
+    - assets/images/kbir.jpg
+    - assets/images/sghir.jpg
 
   #   - images/a_dot_ham.jpeg
 
